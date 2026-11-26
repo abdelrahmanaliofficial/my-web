@@ -1,0 +1,73 @@
+{
+  "$schema": "https://getcomposer.org/schema.json",
+  "name": "abdelrahman-ali/portfolio-backend",
+  "type": "project",
+  "description": "Laravel API backend for Abdelrahman Ali personal website and client portal.",
+  "keywords": [
+    "laravel",
+    "api",
+    "sanctum",
+    "portfolio",
+    "client-portal"
+  ],
+  "license": "proprietary",
+  "require": {
+    "php": "^8.2",
+    "ext-ctype": "*",
+    "ext-fileinfo": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "ext-openssl": "*",
+    "ext-pdo": "*",
+    "ext-tokenizer": "*",
+    "dompdf/dompdf": "^3.1",
+    "laravel/framework": "^12.0",
+    "laravel/sanctum": "^4.0",
+    "laravel/tinker": "^3.2"
+  },
+  "require-dev": {
+    "fakerphp/faker": "^1.23",
+    "mockery/mockery": "^1.6",
+    "nunomaduro/collision": "^8.6",
+    "phpunit/phpunit": "^11.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "Database\\Factories\\": "database/factories/",
+      "Database\\Seeders\\": "database/seeders/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover --ansi"
+    ],
+    "test": [
+      "@php artisan test"
+    ],
+    "test:unit": [
+      "@php artisan test --testsuite=Unit"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "dont-discover": []
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "php-http/discovery": true
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
